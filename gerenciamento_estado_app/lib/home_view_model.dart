@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gerenciamento_estado_app/domain/patient.dart';
+import 'package:gerenciamento_estado_app/domain/explorer.dart';
 
 // Parte mais inteligente do nosso codigo
 
@@ -7,19 +7,23 @@ import 'package:gerenciamento_estado_app/domain/patient.dart';
 // (outros objetos ou widgets) quando o estado de um objeto muda
 
 // setState alterava o estado completo do app
+
+// view: executa regra de negocio
 class HomeViewModel extends ChangeNotifier {
-  final List<Patient> listPatients = [];
+  final List<Explorer> listExplorers = [];
 
   void add(String name, String age) {
-    final value = Patient(name: name, age: int.parse(age));
+    final value = Explorer(name: name, age: int.parse(age));
 
     // preciso notificar que a lista foi alterada
-    listPatients.add(value);
+    listExplorers.add(value);
+    print(listExplorers);
     notifyListeners();
   }
 
-  void remove(Patient value) {
-    listPatients.remove(value);
+  void remove(Explorer value) {
+    listExplorers.remove(value);
+    print(listExplorers);
     notifyListeners();
   }
 }
