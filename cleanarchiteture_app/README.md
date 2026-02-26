@@ -8,7 +8,7 @@ Pasta destinada ao app para estudo da Clean Architeture
 lib/
   ├── main.dart
   ├── core/
-  │   └── http_client.dart = Flutter já possui esse arquivo, então teremos um custom
+  │   └── http_client.dart
   ├── presentation/
   │   ├── controllers/
   │   │   └── product_controller.dart
@@ -28,3 +28,9 @@ lib/
       │   └── product_remote_datasource.dart
       └── repositories/
           └── product_repository_impl.dart
+
+Observações:
+
+http_client.dart = Flutter já possui esse arquivo na biblioteca, então teremos um custom
+
+data/models/ = models/ - Representam os DTOs que fazem a comunicação entre a entidade e o retorno da API

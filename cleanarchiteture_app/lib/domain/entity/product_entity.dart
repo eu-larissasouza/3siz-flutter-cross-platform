@@ -1,4 +1,4 @@
-// Entidade 
+// Entidade Produto
 class ProductEntity {
   final int id;
   final String title;
