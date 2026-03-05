@@ -10,6 +10,7 @@ class CustomHttpClient {
   // Método que consome uma API
   // Como não é uma API síncrona, usamos Future, porque depende de rede, latência, etc
   
+  // Future é uma promessa de espera da resposta da API
   Future<Response> getProducts() async{ 
     // Aguarda a resposta e quando recebe, ele retorna
     return await dio.get("https://gdapp.com.br/api/fiap/products");

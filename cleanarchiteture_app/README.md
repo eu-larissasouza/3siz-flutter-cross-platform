@@ -2,6 +2,10 @@
 
 Pasta destinada ao app para estudo da Clean Architeture
 
+Aula 25/02/2026 = Entity, Models (DTO) and HTTP Client
+
+Aula 04/03/2026 = Controller, Page
+
 ## Estrutura de pastas:
 
 ```

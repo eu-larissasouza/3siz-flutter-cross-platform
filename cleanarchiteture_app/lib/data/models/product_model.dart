@@ -1,7 +1,8 @@
 // É o nosso DTO
 // Faz a comunicação da entidade de forma que a API entenda
-import 'package:arquitetura_app/domain/entity/product_entity.dart';
+import 'package:arquitetura_app/domain/entities/product_entity.dart';
 
+// Entity é a unidade de negócio, Model é a camada de dados
 class ProductModel extends ProductEntity{
   ProductModel({
     required super.id,
