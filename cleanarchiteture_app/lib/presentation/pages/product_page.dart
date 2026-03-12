@@ -1,3 +1,4 @@
+import 'package:arquitetura_app/presentation/controllers/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,10 +14,12 @@ class _ProductPageState extends State<ProductPage> {
   @override
   void initState() {
     super.initState();
+    // Dispara a busca
     final controller = context.read<ProductController>();
-
+  
     // addPostFrameCallback evita erro de setState() durante build
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Espera a tela estar pronta, para executar
       controller.fetchProducts();
     });
   }

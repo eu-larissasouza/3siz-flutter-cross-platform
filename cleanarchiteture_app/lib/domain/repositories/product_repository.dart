@@ -5,6 +5,7 @@
 
 import 'package:arquitetura_app/domain/entities/product_entity.dart';
 
+// Contrato entre a camada de domain e a camada de data
 abstract class ProductRepository {
 
   Future<List<ProductEntity>> getProducts();

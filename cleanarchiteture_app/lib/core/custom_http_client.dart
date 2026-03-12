@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
 // Arquivo responsável por gerenciar as requisições de rede
+// CLiente base para chamadas de API
 class CustomHttpClient {
   // Biblioteca que faz comunicação com a API
   final Dio dio;
