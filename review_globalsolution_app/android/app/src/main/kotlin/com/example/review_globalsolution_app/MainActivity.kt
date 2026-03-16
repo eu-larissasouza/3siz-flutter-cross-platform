@@ -1,5 +1,0 @@
-package com.example.review_globalsolution_app
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity : FlutterActivity()
