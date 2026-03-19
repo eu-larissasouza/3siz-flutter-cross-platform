@@ -15,9 +15,28 @@ class ProductDatasource {
     final response = await httpClient.getProducts();
 
     // transformo uma lista de maps em uma lista
-    // cada elemento da nossa lista dynamic vai ser transformado em um produto
-    return (response.data as List)
-        .map((p) => ProductModel.fromJson(p))
+    // cada elemento da nossa lista dynamic vai ser transformado em um model e depois em produto
+    final List<dynamic> dataList = response.data is List ? response.data : [];
+
+    return dataList
+        .map((e) => ProductModel.fromJson(e))
+        .map((model) => model.toProductEntity())
         .toList();
+  }
+
+  // Método para cadastrar um produto
+  // Recebo apenas um boolean se cadastrou ou não
+  // ------> Isso acontece, porque já temos a informação do produto
+
+  // Parâmetro é um Product que conhecemos no projeto
+  Future<bool> createProduct(ProductEntity product) async {
+    // Antes de chamar o client, fazer a proteção para possiveis erros na API
+    try {
+      final model = ProductModel.fromProductEntity(product);
+      httpClient.createProduct(model.toJson());
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

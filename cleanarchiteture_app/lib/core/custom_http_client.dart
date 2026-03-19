@@ -6,14 +6,23 @@ class CustomHttpClient {
   // Biblioteca que faz comunicação com a API
   final Dio dio;
 
-  CustomHttpClient(): dio = Dio();
+  CustomHttpClient() : dio = Dio();
 
   // Método que consome uma API
   // Como não é uma API síncrona, usamos Future, porque depende de rede, latência, etc
-  
+
   // Future é uma promessa de espera da resposta da API
-  Future<Response> getProducts() async{ 
+  Future<Response> getProducts() async {
     // Aguarda a resposta e quando recebe, ele retorna
     return await dio.get("https://gdapp.com.br/api/fiap/products");
+  }
+
+  // Para criação de produtos
+  // Nosso parametro de entrada é um Map com chave e valor (String, dynamic)
+  Future<Response> createProduct(Map<String, dynamic> jsonData) async {
+    return await dio.post(
+      "https://gdapp.com.br/api/fiap/products",
+      data: jsonData,
+    );
   }
 }
